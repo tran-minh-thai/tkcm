@@ -1,0 +1,10 @@
+# sha256 of the correctness fixtures. These ship with the repository --
+# a fresh clone must be able to run test.sh before fetch-datasets.sh has
+# been run at all -- so they are verified here and not in datasets/.
+1b7783af722b6ba21cb2e8bd2f03fec1576d7be99091bb27ae03445aed31833d  HUSRM.txt
+2babe3aca2e1ea03af8bbdea7e90647d1d40172ecbf0963705e56cab89480d34  cupt_selfpair_counterexample.txt
+22378bebc297c2dbc4fc86ae08b02c9f99dabae11f1a868c0608a588555abdf7  ipeu_counterexample.txt
+e2b82d27fcab7d3fcb55de262f82770723aa9555c9063c0eac055e2d1c100fdb  retirement_fixture.txt
+e61ea7503fcd71b73af05bac6ff86b17ec4406c611646488a52ec31e17d5022e  running_example.txt
+65032b3e21c3634d2eb14a04f155ffd2e7e7970a42e33f1ee2fcf3cfc9555d0d  uspan.txt
+df62c8582024d43bde5d88a02d1aff77d6699db9984b029c738c92af21fd0cad  wide_deep_fixture.txt
