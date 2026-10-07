@@ -1,0 +1,19 @@
+# sha256 of every database file. A file listed here must never change:
+# a table cites the hash, so a byte that moves silently invalidates it.
+#
+# cite_dataset.txt was listed here and is not. It is the provenance note
+# that lives beside the data and is edited whenever a source is added, so
+# listing it made this file report a mismatch by design -- a check that
+# always fails teaches its reader to ignore it.
+0408847d4a60ce8792ec358ea672e077a5f2514f0771ec8fe21fde24e9ca939a  datasets/MicroblogPCU.txt
+f2f4e6da191d10e857f89490d60632d43b2edefe64faf4de5dac27f9affc7f36  datasets/OnlineRetail_II_all.txt
+4ff6681dbbecc0077aa218ecc75d7b1af4d76cf9681a23ec2606ecd640211cf7  datasets/Yoochoose.txt
+ae99159d8b9a239a6520f842bfb661bcaf7c053b37513516a2ec1ad7f6eb8ef1  datasets/bible.txt
+5c29f44a1f920c77023d33900516399e4c4e9b063831269d05f0150e8dd4868d  datasets/bms.txt
+cd13b500ae954af476ab404d6bd31cfe664c72afbf67247a0d8fb3a2adc1d2ce  datasets/e_shop.txt
+befe09fc2069666a1183c86d3da46247209c72f3ba4a7a91d84e70c07b64cfe1  datasets/fifa.txt
+b4614c97fd916eb8c7002fb55ac49295fea888e110b17bc5a1956fc60f4fa175  datasets/kosarak10k.txt
+60a866bf8c4442d480847556a95a3b05ff6164e4f15c69b80ca0a6e95f93d64f  datasets/leviathan.txt
+e9142a42f6b584370cc6b1b889d41235121964a1cff08fc0e32160f7d1dac87c  datasets/scalability_10k.txt
+a3dc70b906c7fd253713020318eddb2192c8a26abba22c4212e09a4518857caa  datasets/scalability_80k.txt
+dd6ef8ef5c2dcf835cec7f099d7117b883bd1868fdf1b6d183acc4ba957d7789  datasets/sign.txt

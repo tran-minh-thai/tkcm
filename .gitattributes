@@ -1,0 +1,38 @@
+# Every text file is checked out with LF on every platform.
+#
+# This rule replaces a per-extension list, and the reason is the case that broke
+# p10-curve. The list named *.sh, because shell scripts were what had come back
+# from the Windows machine through Drive with CRLF. A .java file came back the
+# same way later, the run gate on the Windows side reported the tree modified,
+# and the round could not start. git status was CLEAN on the other machine
+# throughout -- git normalises on comparison -- so only the byte comparison in
+# publish.sh could see it.
+#
+# Naming the extensions that have failed so far protects exactly those. Ask the
+# property instead: is it text? Then it is LF.
+* text=auto eol=lf
+
+# Shell scripts must be checked out with LF on every platform.
+#
+# bench.sh and build.sh came back from the Windows machine through Drive with
+# CRLF and stopped working under bash on macOS — "line 12: : command not found",
+# because the \r joins the command. git reported the tree CLEAN throughout,
+# since it normalises on comparison, so the dirty check could not see it and
+# would have let a run start against a build script bash cannot execute.
+*.sh text eol=lf
+
+# Dataset files are published artefacts pinned by MANIFEST.sha256 and re-hashed
+# into every result row. git must not touch a byte of them, or the hash a table
+# was computed from stops matching the file on disk.
+datasets/** -text
+test/data/** -text
+results/** -text
+# Every directory holding measurement artefacts, not just the live one. When
+# results-superseded/ was created the rule still named only results/, so git
+# normalised the line endings of forty-four files on the way in: the working tree
+# kept 92 CRLF lines and the index took 0. Those bytes have been evidence before
+# -- two runs once differed in nothing else, and that was how the overwrite was
+# found. A rule that names one directory does not protect the next one.
+results-superseded/** -text
+results-invariant/** -text
+results-probe/** -text

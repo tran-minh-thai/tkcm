@@ -1,0 +1,20 @@
+# Build output. Written as a property, not as a list of directories: the list
+# named test/bin and bench/bin, screen/bin and probe/bin were added later, and
+# 57 compiled classes from those two reached the published repository.
+*.class
+**/bin/
+
+# OS / editor noise
+.DS_Store
+~$*.xlsx
+
+# Per-run scratch output of the algorithms (mining pattern files)
+outputs/*.txt
+
+# Transient probe logs; the CSV is the canonical record
+results/probe-*.log
+
+# Preflight results ARE committed — they document cross-machine agreement
+# (preflight results are committed: they are the cross-machine agreement evidence)
+__pycache__/
+.venv/
